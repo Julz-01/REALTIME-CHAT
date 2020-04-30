@@ -16,7 +16,7 @@
                 			<div class="invalid-feedback" v-show="form.errors.has('task')" v-text="form.errors.get('task')">
 						</div>
 						<div class="mt-2"> 
-                		<button class="btn btn-primary float-right">add</button>
+                		<button class="btn btn-primary float-right btn-sm">add</button>
                 		</div>
                 		</div>
                 	</div>
@@ -49,7 +49,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="editModalLabel">{{task.name}}</h5>
+        <h5 class="modal-title" id="editModalLabel">{{task.task}}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -67,7 +67,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" @click="updateTask(task)">Save</button>
+        <button type="button" class="btn btn-primary btn-sm" @click="updateTask(task)">Save</button>
       </div>
     </div>
   </div>
@@ -159,7 +159,7 @@
 				 Swal.fire({
   				 position: 'top',
  				 type: 'success',
-  				 title: task.name+' updated succesfully',
+  				 title: task.task+' updated succesfully',
   				 showConfirmButton: false,
   				 timer: 1500
 				 })

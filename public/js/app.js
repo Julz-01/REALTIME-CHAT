@@ -2069,7 +2069,7 @@ __webpack_require__.r(__webpack_exports__);
         Swal.fire({
           position: 'top',
           type: 'success',
-          title: task.name + ' updated succesfully',
+          title: task.task + ' updated succesfully',
           showConfirmButton: false,
           timer: 1500
         });
@@ -52009,7 +52009,7 @@ var render = function() {
                                 staticClass: "modal-title",
                                 attrs: { id: "editModalLabel" }
                               },
-                              [_vm._v(_vm._s(task.name))]
+                              [_vm._v(_vm._s(task.task))]
                             ),
                             _vm._v(" "),
                             _vm._m(2, true)
@@ -52081,7 +52081,7 @@ var render = function() {
                             _c(
                               "button",
                               {
-                                staticClass: "btn btn-primary",
+                                staticClass: "btn btn-primary btn-sm",
                                 attrs: { type: "button" },
                                 on: {
                                   click: function($event) {
@@ -52112,7 +52112,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "mt-2" }, [
-      _c("button", { staticClass: "btn btn-primary float-right" }, [
+      _c("button", { staticClass: "btn btn-primary float-right btn-sm" }, [
         _vm._v("add")
       ])
     ])
