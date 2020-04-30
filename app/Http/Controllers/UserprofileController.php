@@ -8,7 +8,6 @@ use Auth;
 Use App\User;
 use Image;
 use File;
-
 class UserprofileController extends Controller
 {
      public function __construct()

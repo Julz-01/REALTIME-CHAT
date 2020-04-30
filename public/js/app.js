@@ -2362,17 +2362,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+Vue.prototype.$userId = document.querySelector("meta[name='user-id']").getAttribute('content');
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['users'],
   data: function data() {
     return {
-      mutableUser: this.users
+      mutableUser: this.users,
+      Auth: this.$userId
     };
   },
   methods: {
     deleteUser: function deleteUser(user) {
       var _this = this;
 
+      alert(this.$userId);
       Swal.fire({
         title: 'Are you sure?',
         text: "You won't be able to revert this!",
@@ -52652,21 +52657,23 @@ var render = function() {
                   _vm._v(" "),
                   _c("td", [_vm._v(_vm._s(user.id))]),
                   _vm._v(" "),
-                  _c("td", [
-                    _c(
-                      "button",
-                      {
-                        staticClass: "btn btn-outline-light btn-sm",
-                        on: {
-                          click: function($event) {
-                            $event.preventDefault()
-                            return _vm.deleteUser(user)
-                          }
-                        }
-                      },
-                      [_vm._v("Delete")]
-                    )
-                  ])
+                  user.id == _vm.Auth
+                    ? _c("td")
+                    : _c("td", [
+                        _c(
+                          "button",
+                          {
+                            staticClass: "btn btn-outline-light btn-sm",
+                            on: {
+                              click: function($event) {
+                                $event.preventDefault()
+                                return _vm.deleteUser(user)
+                              }
+                            }
+                          },
+                          [_vm._v("Delete")]
+                        )
+                      ])
                 ])
               }),
               0

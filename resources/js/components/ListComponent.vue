@@ -19,8 +19,10 @@
       <td>{{user.name}}</td>
       <td>{{user.email}}</td>
       <td>{{user.id}}</td>
-      <td>
-      	<button class="btn btn-outline-light btn-sm" @click.prevent="deleteUser(user)">Delete</button>
+      <td v-if="user.id == Auth">
+  </td>
+  <td v-else>
+      <button class="btn btn-outline-light btn-sm" @click.prevent="deleteUser(user)">Delete</button>
   </td>
     </tr>
   </tbody>
@@ -32,11 +34,13 @@
 	</div>
 </template>
 <script>
+Vue.prototype.$userId = document.querySelector("meta[name='user-id']").getAttribute('content');
 	export default{
 		props: ['users'],
 		data(){
 			return{
-		    mutableUser: this.users
+		    mutableUser: this.users,
+        Auth: this.$userId
 			}
 		},
 		methods:{
