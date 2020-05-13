@@ -20,7 +20,7 @@
       <td>{{user.email}}</td>
       <td>{{user.id}}</td>
       <td v-if="user.id == Auth">
-  </td>
+      </td>
   <td v-else>
       <button class="btn btn-outline-light btn-sm" @click.prevent="deleteUser(user)">Delete</button>
   </td>

@@ -46,4 +46,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(Task::class);
     }
+    public function student()
+    {
+        return $this->hasMany(Student::class);
+    }
+    public function messages()
+    {
+
+        return $this->hasMany(Chat::class);
+        
+    }
 }
